@@ -7,7 +7,7 @@ services:
       dockerfile: docker/backend/Dockerfile
     container_name: backend
     ports:
-      - "5000:80"
+      - "5000:8080"
     depends_on:
       - db
 
@@ -22,20 +22,28 @@ services:
       - "5432:5432"
 
   frontend:
-    build:
-      context: .
-      dockerfile: docker/frontend/Dockerfile
-    container_name: frontend
-    ports:
-      - "3000:80"
+      user: 1000:1000
+      volumes:
+          - ./frontend:/var/www
+      build:
+          context: ./docker/frontend
+          dockerfile: Dockerfile
+      container_name: frontend
+      working_dir: /var/www
+      ports:
+          - 3000:80
 
   nginx:
-    build:
-      context: .
-      dockerfile: docker/nginx/Dockerfile
-    container_name: nginx
+    image: nginx:alpine
+    tty: true
+    restart: always
+    volumes:
+      - ./backend:/var/www/backend/
+      - ./frontend:/var/www/frontend/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/log/:/var/log/nginx/
     ports:
-      - "80:80"
+      - 80:80
     depends_on:
-      - backend
       - frontend
+      - backend

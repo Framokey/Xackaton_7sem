@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/publish ./
 
 # Указываем порт, который будет использоваться приложением
-EXPOSE 80
+EXPOSE 8080
 
 # Указываем команду для запуска приложения
 ENTRYPOINT ["dotnet", "backend.dll"]

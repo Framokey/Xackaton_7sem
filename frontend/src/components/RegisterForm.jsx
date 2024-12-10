@@ -3,14 +3,15 @@ import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
+import { login } from '../api/Auth';
 
 const RegisterForm = ({ onSubmit, isRegister }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ email, password });
+  const handleSubmit = (data) => {
+    data.preventDefault();
+    login(data.email, data.password);
   };
 
   return (
@@ -43,7 +44,7 @@ const RegisterForm = ({ onSubmit, isRegister }) => {
             />
           </div>
 
-          <Button label={isRegister ? 'Зарегистрироваться' : 'Войти'} className="p-button-lg p-mt-3" type="submit" />
+          <Button label={isRegister ? 'Зарегистрироваться' : 'Войти'} className="p-button-lg p-mt-3" type="submit"/>
 
           {!isRegister && (
             <>

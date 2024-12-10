@@ -1,0 +1,49 @@
+:root {
+  --fc-border-color: black;
+  --fc-daygrid-event-dot-width: 5px;
+  background-color: white;
+}
+
+.fc-event {
+  background: linear-gradient(135deg, rgb(26, 188, 156), rgb(46, 204, 113)) 0% 0% / cover;
+  color: rgb(255, 255, 255);
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 2px 4px;
+}
+
+.fc .fc-col-header-cell-cushion {
+  /* needs to be same precedence */
+  padding-top: 5px;
+  /* an override! */
+  padding-bottom: 5px;
+  /* an override! */
+}
+
+.fc-timeline-event {
+  height: 50px;
+  border-radius: 10px;
+}
+
+.fc-license-message {
+  display: none;
+}
+
+.fc-datagrid-cell-frame {
+  height: 60px;
+}
+
+.p-dialog-header-icon {
+  display: none;
+}
+
+.fc-today-button {
+  display: none;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  display: flex;
+  justify-content: center;
+}

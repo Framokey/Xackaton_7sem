@@ -1,3 +1,8 @@
+@import "primereact/resources/themes/saga-blue/theme.css"; /* Тема */
+@import "primereact/resources/primereact.min.css"; /* Базовые стили */
+@import "primeflex/primeflex.css"; /* CSS утилиты */
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

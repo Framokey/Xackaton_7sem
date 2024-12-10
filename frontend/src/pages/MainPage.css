@@ -47,3 +47,7 @@
   display: flex;
   justify-content: center;
 }
+
+.fc-datagrid-body .fc-scrollgrid-sync-table {
+  width: 180px !important;
+}

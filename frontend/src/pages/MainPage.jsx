@@ -15,6 +15,9 @@ const BookingBoard = () => {
   const [eventDetailsDialogVisible, setEventDetailsDialogVisible] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [temporaryBlocks, setTemporaryBlocks] = useState([]);
+  const [selectedKovorgins, setSelectedKovorkings] = useState(null);
+  const [selectedCapacity, setSelectedCapacity] = useState(null);
+  const [selectedData, setSelectedDate] = useState(null);
   const [events, setEvents] = useState([
     {
       userId: '1',
@@ -116,19 +119,28 @@ const BookingBoard = () => {
   );
 
   const test = () => {
-    console.log("UNSELECTED")
+    console.log(selectedKovorgins, selectedCapacity, selectedData);
   }
+
+  const kovorkings = [
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' }
+];
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', color: 'black' }}>
       <Toast ref={toast} />
       <div style={{ height: '50px' }}></div>
-      <div style={{width: '400px'}}>
-        <div style={{display: 'flex', justifyContent: 'center'}}>Укажите необходимые параметры</div>
-        <div>
-          <Dropdown type="text" placeholder='Коворкинг' name="CowName" id="CowName" style={{ width: '200px' }} />
-          <InputNumber placeholder='Кол-во человек' name="Capacity" id="Capacity" style={{ width: '200px' }} />
-          <Calendar />
+      <div style={{width: '100%'}}>
+        <div style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}>Укажите необходимые параметры</div>
+        <div style={{display: 'flex', justifyContent: 'center', gap: '10px'}}>
+          <Dropdown value={selectedKovorgins} onChange={(e) => setSelectedKovorkings(e.value.name)} placeholder='Коворкинг' name="CowName" id="CowName" options={kovorkings} optionLabel='name' style={{ width: '200px' }} />
+          <InputNumber value={selectedCapacity} onChange={(e) => setSelectedCapacity(e.value)} placeholder='Кол-во человек' name="Capacity" id="Capacity" style={{ width: '200px' }} />
+          <Calendar value={selectedData} onChange={(e) => setSelectedDate(e.value)}/>
+          <Button label='Применить фильтры' onClick={test}></Button>
         </div>
       </div>
 

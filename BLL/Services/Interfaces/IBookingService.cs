@@ -1,4 +1,6 @@
 ﻿using DAL.Models;
+using Domains.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +12,6 @@ namespace BLL.Services.Interfaces
     public interface IBookingService
     {
         Task<IEnumerable<Bookings>> GetRoomsByFilter(DateTime date, int capacity, int workspace);
+        Task CreateBooking(BookingDto bookingDto);
     }
 }

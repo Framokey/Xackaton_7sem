@@ -1,5 +1,6 @@
 ﻿using DAL.Models;
 using DAL.Repositories.Interfaces;
+using Domains.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System;
@@ -34,6 +35,13 @@ namespace DAL.Repositories
             var result = await bookings.Where(x => rooms.Contains(x.RoomId)).ToListAsync();
 
             return result;
+        }
+
+        public async Task CreateBooking(Bookings bookings)
+        {
+            var test = bookings.ToString();
+            await _context.Bookings.AddAsync(bookings);
+            await _context.SaveChangesAsync();
         }
 
     }

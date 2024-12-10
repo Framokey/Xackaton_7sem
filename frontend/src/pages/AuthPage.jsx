@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
+import { register } from '../api/Auth';
 
 const LoginRegisterPage = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -22,7 +23,7 @@ const LoginRegisterPage = () => {
         console.log('Вход выполнен:', { email, password });
     };
 
-    const handleRegister = () => {
+    const handleRegister = (data) => {
         if (!email || !password || !confirmPassword) {
             setError('Пожалуйста, заполните все поля');
             return;
@@ -32,7 +33,8 @@ const LoginRegisterPage = () => {
             return;
         }
         setError('');
-        console.log('Регистрация выполнена:', { email, password });
+        console.log(data);
+        register(email, password)
     };
 
     return (
@@ -77,7 +79,7 @@ const LoginRegisterPage = () => {
                     <Button
                         label={isLogin ? 'Войти' : 'Зарегистрироваться'}
                         className="w-full mt-3 p-button-success"
-                        onClick={isLogin ? handleLogin : handleRegister}
+                        onClick={isLogin ? handleLogin : (e) => handleRegister(e.value)}
                     />
                 </div>
                 <Divider />

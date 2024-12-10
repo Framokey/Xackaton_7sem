@@ -3,7 +3,7 @@ import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
-import { login } from '../api/Auth';
+import { login, register } from '../api/Auth';
 
 const RegisterForm = ({ onSubmit, isRegister }) => {
   const [email, setEmail] = useState('');
@@ -11,7 +11,7 @@ const RegisterForm = ({ onSubmit, isRegister }) => {
 
   const handleSubmit = (data) => {
     data.preventDefault();
-    login(data.email, data.password);
+    register(data.email, data.password);
   };
 
   return (

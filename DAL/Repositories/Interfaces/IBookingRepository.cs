@@ -1,4 +1,5 @@
 ﻿using DAL.Models;
+using Domains.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace DAL.Repositories.Interfaces
     public interface IBookingRepository
     {
         Task<IEnumerable<Bookings>> GetRoomsByFilter(DateTime date, int capacity, int workspace);
+        Task CreateBooking(Bookings bookings);
     }
 }

@@ -20,7 +20,7 @@ namespace DAL.Repositories
         {
             Users user = new Users
             {
-                Name = userDto.UserName,
+                Email = userDto.Email,
                 Password = userDto.Password,
             };
 
@@ -29,9 +29,9 @@ namespace DAL.Repositories
 
         }
 
-        public async Task<Users> GetUserByNameAsync(string name)
+        public async Task<Users> GetUserByEmailAsync(string email)
         {
-            Users? user = await _workspacesDbContext.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Name == name);
+            Users? user = await _workspacesDbContext.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == email);
 
             if (user == null)
             {

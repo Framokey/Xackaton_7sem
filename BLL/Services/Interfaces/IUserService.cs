@@ -15,7 +15,7 @@ namespace DAL.Interfaces.User
         ///<summary>
         ///Аутентификация сотрудника
         ///</summary>
-        Task<UserDto> Login(string username, string password);
+        Task<UserDto> Login(string email, string password);
 
         ///<summary>
         ///Генерация хэша пароля

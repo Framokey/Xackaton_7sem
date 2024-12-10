@@ -15,6 +15,6 @@ namespace DAL.Interfaces.User
         ///<summary>
         ///Получение сотрудника по имени
         ///</summary>
-        Task<Models.Users> GetUserByNameAsync(string name);
+        Task<Models.Users> GetUserByEmailAsync(string email);
     }
 }

@@ -49,6 +49,9 @@ builder.Services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<BLL.Services.Interfaces.IBookingService, BLL.Services.BookingService>();
+builder.Services.AddScoped<DAL.Repositories.Interfaces.IBookingRepository, DAL.Repositories.BookingRepository>();
+
 
 // Регистрация контекста базы данных
 builder.Services.AddDbContext<WorkspacesDbContext>(options =>

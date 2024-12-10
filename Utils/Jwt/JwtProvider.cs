@@ -16,7 +16,7 @@ namespace Utils.Jwt
         }
         public string GenerateToken(UserDto userDto)
         {
-            Claim[] claims = [new("userId", userDto.Id.ToString()), new("userName", userDto.UserName.ToString())];
+            Claim[] claims = [new("userId", userDto.Id.ToString()), new("userName", userDto.Email.ToString())];
 
             SigningCredentials signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey)),

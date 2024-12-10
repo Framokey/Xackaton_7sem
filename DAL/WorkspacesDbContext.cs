@@ -101,6 +101,11 @@ namespace DAL
                 .IsRequired();
 
             modelBuilder.Entity<Bookings>()
+                .Property(b => b.WorkspaceId)
+                .HasColumnName("ID_WORKSPACE")
+                .IsRequired();
+
+            modelBuilder.Entity<Bookings>()
                 .Property(b => b.Description)
                 .HasColumnName("DESCRIPTION")
                 .IsRequired(false);
@@ -156,28 +161,28 @@ namespace DAL
 
             modelBuilder.Entity<Users>()
                 .Property(u => u.TgId)
-                .HasColumnName("ID_TG");
-            //.IsRequired();
+                .HasColumnName("ID_TG")
+                .IsRequired(false);
 
             modelBuilder.Entity<Users>()
                 .Property(u => u.Email)
-                .HasColumnName("EMAIL");
-            //.IsRequired();
+                .HasColumnName("EMAIL")
+                .IsRequired();
 
             modelBuilder.Entity<Users>()
                 .Property(u => u.Password)
-                .HasColumnName("PASSWORD");
-                //.IsRequired();
+                .HasColumnName("PASSWORD")
+                .IsRequired();
 
             modelBuilder.Entity<Users>()
                 .Property(u => u.Name)
                 .HasColumnName("NAME")
-                .IsRequired();
+                .IsRequired(false);
 
             modelBuilder.Entity<Users>()
                 .Property(u => u.RoleId)
                 .HasColumnName("ID_ROLE")
-                .IsRequired();
+                .IsRequired(false);
 
             // Конфигурация для таблицы ROLES
             modelBuilder.Entity<Roles>()

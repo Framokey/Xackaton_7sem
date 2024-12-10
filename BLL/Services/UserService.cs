@@ -25,9 +25,9 @@ namespace BLL.Services
             _context = context;
         }
 
-        public async Task Register(string name, string password)
+        public async Task Register(string email, string password)
         {
-            var isUserExist = await _userRepository.GetUserByNameAsync(name);
+            var isUserExist = await _userRepository.GetUserByEmailAsync(email);
             if (isUserExist != null)
             {
                 throw new Exception("Пользователь с таким именем уже существует.");
@@ -42,7 +42,7 @@ namespace BLL.Services
 
             UserDto userDto = new UserDto
             {
-                UserName = name,
+                Email = email,
                 Password = hashedPassword
             };
 
@@ -50,9 +50,9 @@ namespace BLL.Services
             Console.WriteLine("Пользователь успешно зарегистрирован.");
         }
 
-        public async Task<UserDto> Login(string name, string password)
+        public async Task<UserDto> Login(string email, string password)
         {
-            Users user = await _userRepository.GetUserByNameAsync(name);
+            Users user = await _userRepository.GetUserByEmailAsync(email);
 
             var result = Verify(password, user.Password);
 
@@ -64,7 +64,7 @@ namespace BLL.Services
             UserDto userDto = new UserDto
             {
                 Id = user.UserId,
-                UserName = user.Name,
+                Email = user.Email,
             };
 
             string token = _jwtProvider.GenerateToken(userDto);

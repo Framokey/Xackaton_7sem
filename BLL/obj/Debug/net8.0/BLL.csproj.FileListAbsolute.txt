@@ -3,7 +3,11 @@ D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\BLL.runt
 D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\BLL.dll
 D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\BLL.pdb
 D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\DAL.dll
+D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Domains.dll
+D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Utils.dll
 D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\DAL.pdb
+D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Domains.pdb
+D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Utils.pdb
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
@@ -16,7 +20,3 @@ D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\refint\B
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\BLL.pdb
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\BLL.genruntimeconfig.cache
 D:\Учеба\Академия\Хакатон 2024\BLL\obj\Debug\net8.0\ref\BLL.dll
-D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Domains.dll
-D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Domains.pdb
-D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Utils.dll
-D:\Учеба\Академия\Хакатон 2024\BLL\bin\Debug\net8.0\Utils.pdb

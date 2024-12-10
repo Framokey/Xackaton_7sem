@@ -12,12 +12,12 @@ services:
       - db
 
   db:
-    image: postgres:15
+    image: postgres:latest
     container_name: db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: xackaton_db
+      POSTGRES_DB: Workspaces
     ports:
       - "5432:5432"
 

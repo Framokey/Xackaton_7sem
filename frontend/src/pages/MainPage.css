@@ -51,3 +51,7 @@
 .fc-datagrid-body .fc-scrollgrid-sync-table {
   width: 180px !important;
 }
+
+.fc-toolbar-chunk {
+  display: none;
+}

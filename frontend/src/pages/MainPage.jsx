@@ -137,9 +137,9 @@ const BookingBoard = () => {
       <div style={{width: '100%'}}>
         <div style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}>Укажите необходимые параметры</div>
         <div style={{display: 'flex', justifyContent: 'center', gap: '10px'}}>
-          <Dropdown value={selectedKovorgins} onChange={(e) => setSelectedKovorkings(e.value.name)} placeholder='Коворкинг' name="CowName" id="CowName" options={kovorkings} optionLabel='name' style={{ width: '200px' }} />
-          <InputNumber value={selectedCapacity} onChange={(e) => setSelectedCapacity(e.value)} placeholder='Кол-во человек' name="Capacity" id="Capacity" style={{ width: '200px' }} />
-          <Calendar value={selectedData} onChange={(e) => setSelectedDate(e.value)}/>
+          <Dropdown value={selectedKovorgins} onChange={(e) => setSelectedKovorkings(e.value.name)} placeholder='Коворкинг' name="CowName" id="CowName" options={kovorkings} optionLabel='name'/>
+          <InputNumber value={selectedCapacity} onChange={(e) => setSelectedCapacity(e.value)} placeholder='Кол-во человек' name="Capacity" id="Capacity" />
+          <Calendar value={selectedData} onChange={(e) => setSelectedDate(e.value)} placeholder='Выберите дату'/>
           <Button label='Применить фильтры' onClick={test}></Button>
         </div>
       </div>

@@ -11,7 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("Auth")]
+    [Route("api/Auth")]
     public class AuthController : Controller
     {
         private readonly IUserService _userService;
@@ -26,11 +26,17 @@ namespace API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IResult> Register(string email, string password)
+        public async Task<IResult> Register([FromBody] RegisterUserRequest request)
         {
-            await _userService.Register(email, password);
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+            {
+                return Results.BadRequest(new
+                {
+                    error = "Email and password are required."
+                });
+            }
 
-
+            await _userService.Register(request.Email, request.Password);
             return Results.Ok();
         }
 

@@ -10,7 +10,7 @@ namespace DAL.Interfaces.User
         ///<summary>
         ///Регистрация сотрудника
         ///</summary>
-        Task Register(string name, string password);
+        Task Register(string email, string password);
 
         ///<summary>
         ///Аутентификация сотрудника

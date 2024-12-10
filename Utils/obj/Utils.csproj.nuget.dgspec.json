@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Учеба\\Академия\\Хакатон 2024\\Utils\\Utils.csproj": {}
+    "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Utils\\Utils.csproj": {}
   },
   "projects": {
-    "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\Domains.csproj": {
+    "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\Domains.csproj",
+        "projectUniqueName": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\Domains.csproj",
         "projectName": "Domains",
-        "projectPath": "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\Domains.csproj",
-        "packagesPath": "C:\\Users\\Андрей Евдоченко\\.nuget\\packages\\",
-        "outputPath": "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\obj\\",
+        "projectPath": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\Domains.csproj",
+        "packagesPath": "C:\\Users\\ramdalf\\.nuget\\packages\\",
+        "outputPath": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Андрей Евдоченко\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ramdalf\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -98,6 +92,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -107,36 +115,30 @@
         }
       }
     },
-    "D:\\Учеба\\Академия\\Хакатон 2024\\Utils\\Utils.csproj": {
+    "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Учеба\\Академия\\Хакатон 2024\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "D:\\Учеба\\Академия\\Хакатон 2024\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Андрей Евдоченко\\.nuget\\packages\\",
-        "outputPath": "D:\\Учеба\\Академия\\Хакатон 2024\\Utils\\obj\\",
+        "projectPath": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\ramdalf\\.nuget\\packages\\",
+        "outputPath": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Utils\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Андрей Евдоченко\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ramdalf\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\Domains.csproj": {
-                "projectPath": "D:\\Учеба\\Академия\\Хакатон 2024\\Domains\\Domains.csproj"
+              "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\Domains.csproj": {
+                "projectPath": "C:\\Academy\\Xackaton_7sem\\Xackaton_7sem\\Domains\\Domains.csproj"
               }
             }
           }
@@ -205,6 +207,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

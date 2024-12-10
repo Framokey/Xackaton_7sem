@@ -1,0 +1,12 @@
+.vscode/
+
+frontend/public/
+frontend/node_modules/*
+
+backend/bin/
+backend/obj/
+backend/published/
+
+backend/*.suo
+backend/*.user
+backend/*.sln.docstates

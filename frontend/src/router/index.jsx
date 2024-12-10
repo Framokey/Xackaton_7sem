@@ -5,6 +5,7 @@ import TestPage from '../pages/testPage';
 import ProfilePage from '../pages/ProfilePage';
 import Layout from '../layout/layout';
 import BookingBoard from "../pages/MainPage";
+import AdminPage from '../pages/AdminPage';
 
 const AppRouter = () => (
   <Router>
@@ -15,6 +16,7 @@ const AppRouter = () => (
       <Route path="/" element={<Layout/>} >
         <Route path="main" element={<BookingBoard />} />
         <Route path='profile' element={<ProfilePage/>} />
+        <Route path='admin' element={<AdminPage />}/>
       </Route>
     </Routes>
   </Router>

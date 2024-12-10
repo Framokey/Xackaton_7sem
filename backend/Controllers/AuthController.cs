@@ -40,7 +40,7 @@ namespace API.Controllers
             UserDto user = await _userService.Login(request.Email, request.Password);
 
 
-            return Results.Ok(new UserResponse(name: user.Email));
+            return Results.Ok(new UserResponse(Email: user.Email));
         }
 
         [HttpGet("refresh")]
@@ -50,14 +50,14 @@ namespace API.Controllers
             var handler = new JwtSecurityTokenHandler();
             var jwtToken = handler.ReadJwtToken(Request.Cookies["Cookie"]);
 
-            var userName = jwtToken.Claims.FirstOrDefault(c => c.Type == "userName")?.Value;
+            var Email = jwtToken.Claims.FirstOrDefault(c => c.Type == "email")?.Value;
 
-            if (userName == null)
+            if (Email == null)
             {
                 return BadRequest();
             }
 
-            return Ok(new UserResponse(name: userName));
+            return Ok(new UserResponse(Email: Email));
         }
 
         [HttpGet("logout")]

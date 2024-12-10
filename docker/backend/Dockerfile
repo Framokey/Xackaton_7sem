@@ -4,6 +4,11 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /src
 
+COPY ../../BLL/ ./BLL/
+COPY ../../DAL/ ./DAL/
+COPY ../../Domains/ ./Domains/
+COPY ../../Utils/ ./Utils/
+
 # Копируем файл проекта (backend.csproj) и восстанавливаем зависимости
 COPY ../../backend/backend.csproj ./backend/
 RUN dotnet restore ./backend/backend.csproj

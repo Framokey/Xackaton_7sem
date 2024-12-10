@@ -3,6 +3,8 @@
 frontend/public/
 frontend/node_modules/*
 
+docker/nginx/log/
+
 backend/bin/
 backend/obj/
 backend/published/

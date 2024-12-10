@@ -23,13 +23,15 @@ services:
 
   frontend:
       user: 1000:1000
+      tty: true
+      restart: always
       volumes:
-          - ./frontend:/var/www
+          - ./frontend:/var/www/frontend
       build:
           context: ./docker/frontend
           dockerfile: Dockerfile
       container_name: frontend
-      working_dir: /var/www
+      working_dir: /var/www/frontend
       ports:
           - 3000:80
 

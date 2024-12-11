@@ -15,11 +15,18 @@ namespace API.Controllers
             _workspaceService = workspaceService;
         }
 
-        [HttpGet]
+        [HttpGet("Workspaces")]
         public async Task<ActionResult<IEnumerable<Workspaces>>> GetEntities()
         {
             var workspaces = await _workspaceService.GetAllWorkspaces();
             return Ok(workspaces);
+        }
+
+        [HttpGet("InfoUsers")]
+        public async Task<ActionResult<IEnumerable<Workspaces>>> GetUserInfo(int userId)
+        {
+            var userInfo = await _workspaceService.GetUserInfo(userId);
+            return Ok(userInfo);
         }
     }
 }

@@ -10,5 +10,6 @@ namespace BLL.Services.Interfaces
     public interface IWorkspaceService
     {
         Task<IEnumerable<Workspaces>> GetAllWorkspaces();
+        Task<IEnumerable<Users>> GetUserInfo(int userId);
     }
 }

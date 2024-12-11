@@ -10,5 +10,6 @@ namespace DAL.Repositories.Interfaces
     public interface IWorkspaceRepository
     {
         Task<IEnumerable<Workspaces>> GetAllWorkspaces();
+        Task<IEnumerable<Users>> GetUserInfo(int userId);
     }
 }

@@ -22,5 +22,10 @@ namespace BLL.Services
         {
             return await _repository.GetAllWorkspaces();
         }
+
+        public async Task<IEnumerable<Users>> GetUserInfo(int userId)
+        {
+            return await _repository.GetUserInfo(userId);
+        }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,5 +23,10 @@ namespace DAL.Repositories
         {
             return await _context.Workspaces.ToListAsync();
         }
+        public async Task<IEnumerable<Users>> GetUserInfo(int userId)
+        {
+            return await _context.Users.AsQueryable()
+                .Where(x => x.UserId == userId).ToListAsync();
+        }
     }
-}
+} 

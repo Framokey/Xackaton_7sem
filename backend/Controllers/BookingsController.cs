@@ -22,6 +22,14 @@ namespace backend.Controllers
             var freeRooms = await _bookingService.GetRoomsByFilter(date, capacity, workspace);
             return Ok(freeRooms);
         }
+
+        [HttpGet("UserHistory")]
+        public async Task<ActionResult<IEnumerable<Bookings>>> UserHistory(int userId)
+        {
+            var history = await _bookingService.GetHistoryByUser(userId);
+            return Ok(history);
+        }
+
         [HttpPost("CreateBooking")]
         public async Task<IActionResult> CreateBooking([FromBody]BookingDto bookingDto)
         {

@@ -12,6 +12,7 @@ namespace BLL.Services.Interfaces
     public interface IBookingService
     {
         Task<IEnumerable<Bookings>> GetRoomsByFilter(DateTime date, int capacity, int workspace);
+        Task<IEnumerable<Bookings>> GetHistoryByUser(int userId);
         Task CreateBooking(BookingDto bookingDto);
     }
 }

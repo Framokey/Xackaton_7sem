@@ -11,6 +11,7 @@ namespace DAL.Repositories.Interfaces
     public interface IBookingRepository
     {
         Task<IEnumerable<Bookings>> GetRoomsByFilter(DateTime date, int capacity, int workspace);
+        Task<IEnumerable<Bookings>> GetUserHistory(int userId);
         Task CreateBooking(Bookings bookings);
     }
 }

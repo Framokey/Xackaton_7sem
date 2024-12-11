@@ -52,6 +52,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<BLL.Services.Interfaces.IBookingService, BLL.Services.BookingService>();
 builder.Services.AddScoped<DAL.Repositories.Interfaces.IBookingRepository, DAL.Repositories.BookingRepository>();
 
+builder.Services.AddSingleton<EmailService>();
+
 
 // Регистрация контекста базы данных
 builder.Services.AddDbContext<WorkspacesDbContext>(options =>

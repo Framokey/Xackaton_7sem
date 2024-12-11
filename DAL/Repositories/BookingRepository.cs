@@ -37,6 +37,14 @@ namespace DAL.Repositories
             return result;
         }
 
+        public async Task<IEnumerable<Bookings>> GetUserHistory(int userId)
+        {
+            var history = await _context.Bookings.AsQueryable()
+                .Where(x => x.UserId == userId)
+                .ToListAsync();
+            return history;
+        }
+
         public async Task CreateBooking(Bookings bookings)
         {
             var test = bookings.ToString();

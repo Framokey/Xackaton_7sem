@@ -6,20 +6,30 @@ import ProfilePage from '../pages/ProfilePage';
 import Layout from '../layout/layout';
 import BookingBoard from "../pages/MainPage";
 import AdminPage from '../pages/AdminPage';
+import ProtectedRoute from './ProtectedRoute';
+import PublicRoute from './PublicRoute';
 
-const AppRouter = () => (
-  <Router>
-    <Routes>
-    <Route path='*' element={<Navigate to="/reg" replace />} />
-      <Route path="/reg" element={<AuthLayout />} />
-      <Route path="/test" element={<TestPage />} />
-      <Route path="/" element={<Layout/>} >
-        <Route path="main" element={<BookingBoard />} />
-        <Route path='profile' element={<ProfilePage/>} />
-        <Route path='admin' element={<AdminPage />}/>
+const AppRouter = () => {
+  
+  return (
+    <Router>
+      <Routes>
+      <Route path='*' element={<Navigate to="/main" replace />} />
+      <Route element={<PublicRoute />}>
+        <Route path="/reg" element={<AuthLayout />} />
+        <Route path="/test" element={<TestPage />} />
       </Route>
-    </Routes>
-  </Router>
-);
+
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/" element={<Layout/>} >
+            <Route path="main" element={<BookingBoard />} />
+            <Route path='profile' element={<ProfilePage/>} />
+            <Route path='admin' element={<AdminPage />}/>
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
+  )
+};
 
 export default AppRouter;

@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
-import { register } from '../api/Auth';
+import { login, register } from '../api/Auth';
 
 const LoginRegisterPage = () => {
+    const navigate = useNavigate();    
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!email || !password) {
             setError('Пожалуйста, заполните все поля');
             return;
         }
         setError('');
-        console.log('Вход выполнен:', { email, password });
+        await login(email, password);
+        navigate('main');
     };
 
-    const handleRegister = (data) => {
+    const handleRegister = async () => {
         if (!email || !password || !confirmPassword) {
             setError('Пожалуйста, заполните все поля');
             return;
@@ -33,8 +36,8 @@ const LoginRegisterPage = () => {
             return;
         }
         setError('');
-        console.log(data);
-        register(email, password)
+        await register(email, password)
+        navigate('main');
     };
 
     return (
@@ -79,7 +82,7 @@ const LoginRegisterPage = () => {
                     <Button
                         label={isLogin ? 'Войти' : 'Зарегистрироваться'}
                         className="w-full mt-3 p-button-success"
-                        onClick={isLogin ? handleLogin : (e) => handleRegister(e.value)}
+                        onClick={isLogin ? handleLogin : handleRegister}
                     />
                 </div>
                 <Divider />
